@@ -1,0 +1,62 @@
+Build a full-stack chatbot web application for "Supremo Traders".
+
+🧠 BOT CAPABILITIES:
+1. The chatbot should answer questions related to:
+   - Stock Market (Basics, Strategies, Terms, etc.)
+   - Forex Market
+   - Cryptocurrency
+   - Legality of markets, brokers, regulations
+   - Supremo Traders’ courses (content, syllabus, course types, batch schedules)
+   - Contact details, branch info, mentorship model, faculty
+   - All factual data from the provided PDF document (upload will be provided)
+   
+2. The chatbot **should not** answer:
+   - Any questions related to **course fees**
+   - Any **personal questions** or **identity-related queries**
+   - Any **vulgar**, offensive, or **non-financial topics**
+
+📁 FILES TO BE USED:
+- 1 PDF (detailed info about Supremo Traders: courses, faculty, branches)
+- 2 logo image files of Supremo Traders (to be placed on top-left of the UI)
+
+💻 FRONTEND REQUIREMENTS:
+- **ReactJS-based frontend**
+- Gen-Z focused UI with modern look
+- Stick to **Blue and White** as primary colors (Supremo branding)
+- Use **Green** for “Positive” actions or gains (profits/uptrend)
+- Use **Red** for “Negative” or losses (downtrend)
+- Place the Supremo Traders’ logo in the top-left corner
+- Include stock/crypto/forex **themed elements**, such as candlestick background, charts or ticker tape for added vibe
+
+📲 FEATURES:
+- Simple chat window interface
+- Welcome message: “Hi, I’m SupremoBot! Ask me anything about Trading, Forex, Crypto, or Supremo Traders’ Courses.”
+- Scrollable chat with timestamps
+- Option to upload new version of the PDF in backend (for future updates)
+- Keep code modular so FAQs or data sources can be easily updated
+
+🛠️ BACKEND REQUIREMENTS:
+- Use **Node.js + Express**
+- Store and parse PDF content using `pdf-parse` or similar library
+- Implement OpenAI API or custom NLP pipeline to process questions and return relevant answers
+- Filter logic to:
+   - Reject or deflect personal/fee/vulgar questions
+   - Log rejected questions with timestamp for admin review
+
+🔐 BONUS:
+- Add a simple password-protected admin panel to:
+   - View chat logs
+   - Upload new course PDFs
+   - See flagged queries
+
+📦 TECH STACK:
+- Frontend: React + TailwindCSS
+- Backend: Node.js + Express
+- NLP: OpenAI API or local NLP logic
+- PDF Parsing: `pdf-parse` (Node library)
+- Hosting: Replit or any cloud platform
+
+💡 HINTS:
+- Use localStorage to store chat history temporarily.
+- Implement "typing" effect to make the bot more lively.
+- Add subtle animations to enhance the Gen-Z appeal.

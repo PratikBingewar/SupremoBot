@@ -1,0 +1,30 @@
+{
+  "name": "sara-supremo-traders-mobile",
+  "version": "1.0.0",
+  "description": "S.A.R.A. - Supremo AI Response Assistant Mobile App",
+  "main": "index.js",
+  "scripts": {
+    "android": "npx cap run android",
+    "build": "npm run build && npx cap sync",
+    "open:android": "npx cap open android",
+    "sync": "npx cap sync"
+  },
+  "keywords": [
+    "supremo",
+    "traders",
+    "sara",
+    "stock",
+    "market",
+    "ai",
+    "assistant",
+    "mobile",
+    "android",
+    "capacitor"
+  ],
+  "author": "Supremo Traders",
+  "license": "MIT",
+  "capacitor": {
+    "appId": "com.supremotraders.sara",
+    "appName": "S.A.R.A. - Supremo Traders"
+  }
+}

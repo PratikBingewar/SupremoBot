@@ -1,0 +1,25 @@
+{
+  "appName": "S.A.R.A. - Supremo Traders",
+  "appId": "com.supremotraders.sara",
+  "version": "1.0.0",
+  "buildDate": "2025-08-03T13:25:38.594Z",
+  "platform": "Android",
+  "framework": "Capacitor + React",
+  "status": "Ready for APK build",
+  "webUrl": "https://supremo-bot-kadamatulp.replit.app",
+  "features": [
+    "AI-powered stock market assistant",
+    "Real-time chat interface",
+    "Mobile-responsive design",
+    "Offline capabilities",
+    "Push notifications ready",
+    "Android native performance"
+  ],
+  "buildInstructions": [
+    "1. Install Android Studio",
+    "2. Set up Android SDK",
+    "3. Run: npx cap open android",
+    "4. Build APK from Android Studio",
+    "5. APK will be generated in android/app/build/outputs/apk/"
+  ]
+}

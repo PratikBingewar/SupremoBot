@@ -1,0 +1,146 @@
+Here’s a much deeper and structured extraction of VT Markets' publicly available information—ideal for model ingestion or structured datasets. This update augments previous data by incorporating more precise figures, user-reported changes, and platform offerings.
+
+---
+
+## 1. Regulatory Structure & Company Details
+
+* **Founded**: 2015, headquartered in Sydney, Australia with 400+ employees in 2024 ([Wikipedia][1]).
+* Fully regulated via:
+
+  * **South Africa (FSCA)**: VT Markets (Pty) Ltd, FSP No. 50865 ([VT Markets |][2])
+  * **Mauritius (FSC)**: VT Markets Limited, Licence GB23202269 ([VT Markets |][2])
+  * **UAE (SCA)**: Dubai Branch, License No. 20200000299, limited to introductions (non-brokerage) ([VT Markets |][2])
+  * **Cyprus**: VTMarkets Ltd handles payment/internal services only, no trading services ([VT Markets |][2]).
+
+---
+
+## 2. Account Types & Specs
+
+VT Markets offers a range of account types tailored to different trader profiles:
+
+* **Standard STP**:
+
+  * Spread: \~1.2 pips
+  * Commission: None
+  * Minimum deposit: \$100
+  * Min trade size: 0.01 lot
+  * Currencies: AUD, USD, HKD, GBP, EUR, CAD ([VT Markets -][3], [VT Markets |][2]).
+
+* **Raw ECN**:
+
+  * Spread: 0.0 pips
+  * Commission: \$6 per round turn
+  * Otherwise similar specs to STP ([VT Markets -][3], [VT Markets |][2]).
+
+* **Cent Account**:
+
+  * Trades CFDs of Forex, Gold, Silver, Oil
+  * Deposit: \$50
+  * Standard STP: spread \~1.1 pips, no commission; ECN: 0.0 pips + \$6 commission ([VT Markets -][3]).
+
+* **Swap-Free (Islamic)**:
+
+  * Available on STP or ECN
+  * No overnight swap interest; suitable for long-term or Shariah-compliant trading ([VT Markets -][3]).
+
+* **Not Available To**: Residents of U.S., Singapore, Russia, FATF-sanctioned jurisdictions ([VT Markets |][2]).
+
+---
+
+## 3. Fees, Deposits & Withdrawals
+
+| Type                              | Details                                                                                                           |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Minimum Deposit**               | \$50 generally; \$100 via bank transfer ([FXStreet][4], [tradingfinder.com][5], [Finance Magnates Directory][6])  |
+| **Deposit Fees**                  | None from broker; banks/payment providers may apply charges ([Finance Magnates Directory][6], [forexlive.com][7]) |
+| **Withdrawal Fees**               | First wire transfer per month: free; subsequent: \$20 each ([FXStreet][4], [tradingfinder.com][5])                |
+|                                   | Fasapay: 0.5%; Skrill: 1%; Neteller: 2% ([Finance Magnates Directory][6], [forexlive.com][7])                     |
+| **Inactivity / Maintenance Fees** | None ([Finance Magnates Directory][6], [ForexBrokers.com][8])                                                     |
+| **Forex/CFD Spreads**             | Standard STP: EUR/USD \~1.2 pips; Raw ECN: effective \~0.83 pips ([ForexBrokers.com][8])                          |
+
+---
+
+## 4. Tradable Instruments & Leverage
+
+VT Markets provides a broad asset suite across platforms (MT4/MT5, WebTrader, App):
+
+* **Forex**: 40+ pairs (majors, minors, exotics), spreads from \~1.2 pips, leverage up to 1:1000 (region-dependent) ([forexlive.com][7])
+* **Indices**: 15+ global indices, spreads from 0.0 pips, up to 1:500 leverage ([forexlive.com][7])
+* **Energetics (Oil/Gas)**: Spreads \~5 pips, leverage up to 1:500 ([forexlive.com][7])
+* **Precious Metals**: Gold, Silver, Copper; Gold leverage up to 1:1000; spreads \~0.1 pips ([forexlive.com][7])
+* **Soft Commodities**: Cocoa, Coffee, Cotton, etc., spreads \~12 pips, leverage \~1:20 ([forexlive.com][7])
+* **ETFs**: 51+; leverage up to 1:33 ([forexlive.com][7])
+* **Share CFDs**: 800+ stocks globally; leverage up to 1:33 (non-earnings season) ([forexlive.com][7])
+* **Bond CFDs**: Spreads \~0.1 pips, leverage up to 1:100 ([forexlive.com][7])
+* **Options**: Not available ([Investing.com][9])
+
+---
+
+## 5. Platform Features & Tools
+
+* **Platforms**: MetaTrader 4 (MT4), MetaTrader 5 (MT5), WebTrader, plus proprietary mobile app ([VT Markets -][10], [ForexBrokers.com][8])
+* **Mobile App**: Supports watchlists, pivot point analyses, basic charts with \~30 indicators, 10 timeframes, limited drawing tools; syncs across devices ([ForexBrokers.com][8])
+* **Extras**:
+
+  * **Market Buzz**: AI-driven insights
+  * **Economic Calendar**
+  * **Trading Glossary**
+  * **Expert Advisors support** (for automated trading)
+  * **Promotions**: Welcome & deposit bonuses, loyalty/referrals, Active Trader Program, VPS refunds ([VT Markets -][11])
+
+---
+
+## 6. User-Reported Adjustments & Community Feedback
+
+* **Leverage Changes** (Apr 2024):
+
+  * US Shares CFD leverage adjusted from 33:1 to 20:1; MT5 new positions near open/close limited to 5:1, reverting afterward; MT4 unaffected ([Reddit][12]).
+
+* **MT5 Upgrade** (Apr 2024):
+
+  * System upgrade on April 27, 2024 (00:30–06:00 GMT+3) required version ≥4150; downtime affected trading, portal, deposits/withdrawals ([Reddit][13]).
+
+* **Trust & Withdrawal Experiences**:
+
+  * Mixed feedback: several users report smooth, fast crypto withdrawals; others express frustration over document requests or delayed profit withdrawals ([VT Markets -][10], [Forex Peace Army][14]).
+
+---
+
+### Suggested Structured Schema for Model Training
+
+```json
+{
+  "company": { ... },
+  "regulatory": [ ... ],
+  "accounts": {
+    "standard_stp": { "spread": 1.2, "commission": 0, ... },
+    "raw_ecn": { "spread": 0, "commission": 6, ... },
+    "cent": { ... },
+    "swap_free": { ... }
+  },
+  "trading_instruments": [ "forex", "indices", "energies", ... ],
+  "fees": { "deposit": 0, "withdraw_first_wire": 0, "withdraw_subsequent_wire": 20, "fasapay": 0.5, ... },
+  "platforms": [ "MT4", "MT5", "WebTrader", "Mobile App" ],
+  "tools_and_promotions": [ "Market Buzz", "Economic Calendar", ... ],
+  "user_feedback": [ { "type": "leverage_change", "details": { ... } }, ... ]
+}
+```
+
+---
+
+Let me know if you'd like this broken down further (e.g., instrument-specific details, platform comparisons, brush release logs) or formatted differently, such as CSV or SQL-ready structure.
+
+[1]: https://en.wikipedia.org/wiki/VT_Markets?utm_source=chatgpt.com "VT Markets"
+[2]: https://www.vtmarkets.net/faq/what-account-types-does-vt-markets-offer/?utm_source=chatgpt.com "What account types does VT Markets offer? | VT Markets"
+[3]: https://www.vtmarkets.com/in/tradingaccounts/?utm_source=chatgpt.com "Trading Accounts - VT Markets"
+[4]: https://www.fxstreet.com/brokers/reviews/vt-markets?utm_source=chatgpt.com "VT Markets Broker Review 2025 - Comparing Pros & Cons"
+[5]: https://tradingfinder.com/brokers/vt-markets/?utm_source=chatgpt.com "VT Markets Broker Review July 2025 | ASIC-Regulated"
+[6]: https://directory.financemagnates.com/forex-brokers/vt-markets/?utm_source=chatgpt.com "VT Markets Review: Features, Fees & Platforms for 2024"
+[7]: https://www.forexlive.com/Brokers/vt-markets?utm_source=chatgpt.com "VT Markets Review: Comprehensive Analysis!"
+[8]: https://www.forexbrokers.com/reviews/vt-markets?utm_source=chatgpt.com "VT Markets Review 2025: Pros & Cons | ForexBrokers.com"
+[9]: https://www.investing.com/brokers/reviews/vt-markets/?utm_source=chatgpt.com "VT Markets Review 2025 - Investing.com"
+[10]: https://www.vtmarkets.com/?utm_source=chatgpt.com "VT Markets CFD Broker — Award-Winning Forex CFDs Broker 2024"
+[11]: https://www.vtmarkets.com/ "VT Markets CFD Broker — Award-Winning Forex CFDs Broker 2024"
+[12]: https://www.reddit.com/r/FOREXTRADING/comments/1c7czvm?utm_source=chatgpt.com "VT Markets: Modifications on All Shares"
+[13]: https://www.reddit.com/r/FOREXTRADING/comments/1cdg53g?utm_source=chatgpt.com "VT Markets: MT5 trading software version update notice"
+[14]: https://www.forexpeacearmy.com/forex-reviews/16738/vtmarkets-forex-brokers?utm_source=chatgpt.com "VT Markets | Forex Brokers Reviews | Forex Peace Army"
